@@ -1,0 +1,77 @@
+<main>
+  <div class="container">
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center ">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div
+            class="col-lg-7 col-md-7 col-xl-5 col-sm-12  d-flex flex-column align-items-center justify-content-center">
+            <div class="d-flex justify-content-center py-4">
+              <a href="index.html" class="logo d-flex align-items-center w-auto">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Instituto Vrs</span>
+              </a>
+            </div><!-- End Logo -->
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="pt-4 pb-2">
+                  <h5 class="card-title text-center pb-0 fs-4">Ingrese a su cuenta </h5>
+                  <p class="text-center small">
+                    Ingrese su usuario y contraseña para iniciar sesión</p>
+                </div>
+                <form autocomplete="off" [formGroup]="formInicioSesion" class="row g-3 ">
+
+                  <!--Input Dni-->
+                  <div class="col-12">
+                    <label for="dni" class="form-label">Dni</label>
+                    <div class="p-inputgroup mb">
+                      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                      <p-inputNumber mode="decimal" formControlName="dni" placeholder="Ejem: 524971"
+                      [allowEmpty]="true"
+                        [ngClass]="{'ng-invalid ng-dirty':flag}"  [max]="8999999"   >
+                      </p-inputNumber>
+                      <!-- <input type="text" pInputText placeholder="Dni" formControlName="dni"
+                       > -->
+                    </div>
+                    <ng-container *ngIf="campoNoValido('dni')">
+                      <p-message *ngIf="campoNoValido('dni')" severity="error" [text]="mensaje">
+                      </p-message>
+                    </ng-container>
+                  </div>
+                  <!--Input Password-->
+                  <div class="col-12">
+                    <label for="contraseña" class="form-label">Contraseña</label>
+                    <div class="p-field p-fluid">
+                      <p-password placeholder="Ejem: 123abc" formControlName="password" name="Password"
+                        promptLabel="Ingrese su Contraseña" weakLabel="Contraseña Debil" mediumLabel="Contraseña Medio"
+                        strongLabel="Contraseña Fuerte" autocomplete="off" spellcheck="false"
+                        [ngClass]="{'ng-invalid ng-dirty':flag}"></p-password>
+                    </div>
+                    <ng-container *ngIf="campoNoValido('password')">
+                      <p-message *ngIf="campoNoValido('password')" severity="error" [text]="mensaje">
+                      </p-message>
+                    </ng-container>
+                  </div>
+
+                  <!--Boton submit del formulario -->
+                  <div class="col-12">
+                    <div class="row mt-1">
+                      <button pButton pRipple type="submit" label="Iniciar secion"
+                        [ngStyle]="{backgroundColor:'var(--blue-800)'}" class="p-button-rounded "
+                        (click)="validacion()"></button>
+                    </div>
+                  </div>
+
+                  <!--Mensaje de Error de inicio de Secion -->
+                  <p-messages [value]="msgs"></p-messages>
+                </form>
+              </div>
+            </div>
+            <div class="credits">
+              &copy; Copyright <strong><span>Vrs System</span></strong>. Reservados
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main><!-- End #main -->

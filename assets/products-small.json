@@ -1,0 +1,28 @@
+{
+	"data": [
+		{
+			"id": 1,
+			"codigo": "Matricula",
+      "descripcion":"matricula de inscripcion",
+			"precio": 900000,
+			"recargo": 10000,
+			"subtotal": 910000
+		},
+    {
+			"id": 2,
+			"codigo": "cuoMar",
+      "descripcion":"cuota del mes de marzo",
+			"precio": 800000,
+			"recargo": 10000,
+			"subtotal": 810000
+		},
+    {
+			"id": 3,
+			"codigo": "cuoMay",
+      "descripcion":"cuota del mes de mayo",
+			"precio": 800000,
+			"recargo": 10000,
+			"subtotal": 810000
+		}
+	]
+}
